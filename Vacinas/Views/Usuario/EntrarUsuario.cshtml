@@ -1,0 +1,14 @@
+﻿@model VacinasModel.DataBase.Model.Usuario
+
+@{
+    ViewBag.Title = "EntrarUsuario";
+}
+
+<h2>EntrarUsuario</h2>
+@using (Html.BeginForm("Logar", "Usuario", FormMethod.Post))
+{
+    <input type="text" id="usuario" name="usuario" /><br />
+    <input type="password" id="senha" name="senha" /><br />
+    <input type="submit" value="Logar" /><br />
+}
+

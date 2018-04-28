@@ -1,0 +1,51 @@
+﻿@model IEnumerable<VacinasModel.DataBase.Model.Vacina>
+
+<h3>
+    @Html.ActionLink("Adicionar Vacina", "CreateVacina")
+</h3>
+
+    <div class="pull-right">@using (Html.BeginForm("Buscar", "Home", FormMethod.Get))
+{
+    <input type="text" id="edtBusca" name="edtBusca" placeholder="Buscar..."
+           class="form-control" />
+    <button type="submit" class="btn btn-primary">
+        <i class="glyphicon glyphicon-search"></i> Buscar
+    </button>
+}
+    </div>
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.DtVacina)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DtValidade)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.DtVacina)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DtValidade)
+            </td>
+            <td>
+
+                @Html.ActionLink("Deletar", "DeleteVacina", new { idVacina = item.IdVacina })
+            </td>
+        </tr>
+    }
+
+</table>

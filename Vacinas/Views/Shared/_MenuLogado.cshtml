@@ -1,0 +1,14 @@
+﻿@using VacinasModel.DataBase.Utils
+
+@{
+    var Usuario = LoginUtils.Usuario;
+    
+}
+
+<li style="color: darkgray;">
+    Olá @Usuario.Nome
+</li>
+<li>
+    @Html.ActionLink("Sair", "DeslogarUsuario", "Usuario")
+</li>
+
